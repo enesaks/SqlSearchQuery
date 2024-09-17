@@ -42,5 +42,5 @@ dotnet ef database update
 ```
 dotnet run 
 ```
-  komudu ile projenizi çalıştırıp deneye bilirsiniz.
+  komudu ile projeyi çalıştırıp deneye bilirsiniz.
 
