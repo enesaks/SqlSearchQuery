@@ -1,0 +1,59 @@
+﻿@model SqlSearchQuery.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    int i = 1;
+}
+
+<div class="text-center">
+
+    <h2>Şirket Arama</h2>
+
+    <form asp-action="SegmentPost" asp-controller="Home" method="post">
+
+        <div class="mb-3">
+            <select name="SegmentSelect" class="form-select">
+                <option id="">Şirket Türü Seç</option>
+                @foreach (var item in Model.Segments)
+                {
+                    <option>@item</option>
+                }
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="segment" class="form-label">Ya Da Şirket Türü Gir</label>
+            <input type="text" name="SegmentText">
+        </div>
+        <button>Şirketleri Ara</button>
+    </form>
+
+
+    <br>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Şirket Adı</th>
+                <th>Şirket Türü</th>
+                <th>Vergi No</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var company in Model.Companies)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@company.CompanyId</td>
+                    <td>@company.CompanyName</td>
+                    <td>@company.Segment</td>
+                    <td>@company.TaxNo</td>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+
+</div>
