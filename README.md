@@ -44,3 +44,10 @@ dotnet run
 ```
   komudu ile projeyi çalıştırıp deneye bilirsiniz.
 
+### Prooje Resimleri : 
+
+<img width="1470" alt="2" src="https://github.com/user-attachments/assets/8e7590f5-720e-4205-8cbe-7aa6a14017d9">
+<img width="1470" alt="3" src="https://github.com/user-attachments/assets/c7a8e047-8329-421a-96fa-77941ffdb936">
+<img width="1470" alt="4" src="https://github.com/user-attachments/assets/c0f0d8ab-8f4c-4260-b7f8-2e4ead4428bb">
+<img width="517" alt="1" src="https://github.com/user-attachments/assets/fc7ae0bb-a2b3-4a70-a1d5-193463c256b6">
+
