@@ -22,13 +22,13 @@ Arama sonuçları, şirketlerin ID, adı, türü ve vergi numarası ile ekranda 
 git clone https://github.com/enesaks/SqlSearchQuery/
 ```
 
-3. NuGet ile gerekli kutuphaneleri kurun ;
+2. NuGet ile gerekli kutuphaneleri kurun ;
    * Microsoft.EntityFrameworkCore
    * Microsoft.EntityFrameworkCore.Design
    * Microsoft.EntityFrameworkCore.SqlServer
    * Microsoft.EntityFrameworkCore.Tools
 
-2. Connection String
+3. Connection String
 
    [appsettings.json](https://github.com/enesaks/SqlSearchQuery/blob/main/appsettings.json) dosyasından DefaultConnection'ı kendi database'inize göre düzenleyiniz.
 
@@ -38,7 +38,7 @@ git clone https://github.com/enesaks/SqlSearchQuery/
 dotnet ef migrations add MigrationName
 dotnet ef database update
 ```
-4. Projeyi Çalıştır
+5. Projeyi Çalıştır
 ```
 dotnet run 
 ```
