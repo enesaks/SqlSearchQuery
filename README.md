@@ -44,7 +44,7 @@ dotnet run
 ```
   komudu ile projeyi çalıştırıp deneye bilirsiniz.
 
-### Prooje Resimleri : 
+### Proje Resimleri : 
 
 <img width="1470" alt="2" src="https://github.com/user-attachments/assets/8e7590f5-720e-4205-8cbe-7aa6a14017d9">
 <img width="1470" alt="3" src="https://github.com/user-attachments/assets/c7a8e047-8329-421a-96fa-77941ffdb936">
