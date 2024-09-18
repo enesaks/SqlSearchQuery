@@ -28,20 +28,20 @@ namespace SqlSearchQuery.Controllers
             {
                 // Eğer segmentTxt boşsa, segment'e göre sorgula
                 companies = string.IsNullOrEmpty(segment)
-                    ? await _context.Companies.ToListAsync()
-                    : await _context.Companies.Where(x => x.Segment == segment).ToListAsync();
+                    ? await _context.Companies.Where(x => x.IsDelete == false).ToListAsync()
+                    : await _context.Companies.Where(x => x.Segment == segment && x.IsDelete == false).ToListAsync();
             }
             else
             {
                 // Eğer segmentTxt doluysa, onunla sorgula
-                companies = await _context.Companies.Where(x => x.Segment == segmentTxt).ToListAsync();
+                companies = await _context.Companies.Where(x => x.Segment == segmentTxt && x.IsDelete == false).ToListAsync();
 
                 // Eğer sonuç bulunamazsa, alternatif sorgu yap
                 if (!companies.Any())
                 {
                     companies = string.IsNullOrEmpty(segment)
                         ? await _context.Companies.ToListAsync()
-                        : await _context.Companies.Where(x => x.Segment == segment).ToListAsync();
+                        : await _context.Companies.Where(x => x.Segment == segment && x.IsDelete == false).ToListAsync();
                 }
             }
 
@@ -69,5 +69,50 @@ namespace SqlSearchQuery.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult DeleteCompany(int id)
+        {
+            var deleteCompany = _context.Companies.Find(id);
+
+            if (deleteCompany == null)
+            {
+                // Eğer şirket bulunmazsa, bir hata sayfasına yönlendirebilir veya bir mesaj gösterebilirsin.
+                return NotFound();
+            }
+
+            System.Console.WriteLine("id : " + id);
+
+            deleteCompany.IsDelete = true;
+            deleteCompany.DeleteTime = DateTime.Now;
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> GarbageIndex()
+        {
+            var values = _context.Companies.Where(x => x.IsDelete == true).ToList();
+
+            return View(values);
+        }
+
+        public IActionResult outGarbage(int id)
+        {
+            var outCompany = _context.Companies.Find(id);
+
+            if (outCompany == null)
+            {
+                // Eğer şirket bulunmazsa, bir hata sayfasına yönlendirebilir veya bir mesaj gösterebilirsin.
+                return NotFound();
+            }
+
+            System.Console.WriteLine("id : " + id);
+
+            outCompany.IsDelete = false;
+            outCompany.DeleteTime = null;
+            _context.SaveChanges();
+
+            return RedirectToAction("GarbageIndex");
+        }
+
     }
 }

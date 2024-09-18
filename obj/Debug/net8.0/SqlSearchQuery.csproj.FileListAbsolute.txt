@@ -134,3 +134,4 @@
 /Users/enes/Documents/StajGenel/Staj/SqlSearchWithQuery/SqlSearchQuery/bin/Debug/net8.0/runtimes/win/lib/net6.0/System.Windows.Extensions.dll
 /Users/enes/Documents/StajGenel/Staj/SqlSearchWithQuery/SqlSearchQuery/obj/Debug/net8.0/SqlSearchQuery.csproj.AssemblyReference.cache
 /Users/enes/Documents/StajGenel/Staj/SqlSearchWithQuery/SqlSearchQuery/obj/Debug/net8.0/SqlSearc.EB36B047.Up2Date
+/Users/enes/Documents/StajGenel/Staj/SqlSearchWithQuery/SqlSearchQuery/obj/Debug/net8.0/SqlSearchQuery.sourcelink.json

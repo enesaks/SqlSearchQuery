@@ -8,4 +8,7 @@ public class Company
     public string CompanyName { get; set; }
     public string Segment { get; set; }
     public string TaxNo { get; set; }
+    public DateTime? DeleteTime { get; set; }
+    public bool IsDelete { get; set; } = false;
+
 }

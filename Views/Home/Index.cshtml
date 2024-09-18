@@ -39,6 +39,7 @@
                 <th>Şirket Adı</th>
                 <th>Şirket Türü</th>
                 <th>Vergi No</th>
+                <th>İşlemler</th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +51,7 @@
                     <td>@company.CompanyName</td>
                     <td>@company.Segment</td>
                     <td>@company.TaxNo</td>
+                    <td><a class="btn btn-danger" href="/Home/DeleteCompany/@company.CompanyId">Çöp Kutusuna Gönder</a></td>
                 </tr>
                 i++;
             }
