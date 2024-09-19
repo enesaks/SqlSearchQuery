@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SqlSearchQuery.BackroundServices;
 using SqlSearchQuery.Models.Context;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<SqlSearchQueryContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddHostedService<TimedHostedService>();
 
 var app = builder.Build();
 

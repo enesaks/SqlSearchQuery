@@ -15,6 +15,8 @@ namespace SqlSearchQuery.Controllers
             _context = context;
         }
 
+
+
         public async Task<IActionResult> Index()
         {
             // TempData'dan segmentleri al
@@ -112,6 +114,24 @@ namespace SqlSearchQuery.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("GarbageIndex");
+        }
+
+        public async Task<IActionResult> DeleteForever()
+        {
+            var DeleteList = _context.Companies.Where(x => x.IsDelete == true);
+            DateTime now = DateTime.Now;
+
+            foreach (var item in DeleteList)
+            {
+                System.Console.WriteLine(item.CompanyId);
+                if (item.DeleteTime != null && (now - item.DeleteTime.Value).TotalDays >= -7)//7 gün veya daha fazla çöp kovasında ise silinecek.
+                {
+                    _context.Companies.Remove(item);
+                    //_context.SaveChanges();
+                }
+            }
+
+            return Ok();
         }
 
     }
