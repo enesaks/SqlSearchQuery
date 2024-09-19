@@ -2,6 +2,8 @@
 
 Bu proje, bir SQL veritabanından şirket bilgilerini almak için Entity Framework kullanılarak geliştirilmiştir. Kullanıcılar, arama yaparak şirketlerin ID, adını, türünü ve vergi numarasını görüntüleyebilirler.
 
+Şirket bilgilerini silmek istediğinizde, bilgiler önce çöp kutusuna alınır ve 7 gün sonra kalıcı olarak silinir. Eğer silme işlemini iptal etmek isterseniz, çöp kutusundan çıkararak şirket bilgilerini geri getirebilirsiniz.
+
 ## Özellikler
 
 - **Şirket Türü (Segment) Seçimi:** Kullanıcılar, mevcut şirket türlerinden birini seçebilirler. Seçilen tür ile şirketler listelenir.
@@ -14,6 +16,7 @@ Arama sonuçları, şirketlerin ID, adı, türü ve vergi numarası ile ekranda 
 - ASP.NET Core
 - Entity Framework
 - SQL Server
+- IHostedService
   
 ## Kurulum
 
