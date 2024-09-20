@@ -123,8 +123,8 @@ namespace SqlSearchQuery.Controllers
 
             foreach (var item in DeleteList)
             {
-                System.Console.WriteLine("Silinecek Id : " + item.CompanyId);
-                if (item.DeleteTime != null && (now - item.DeleteTime.Value).TotalSeconds >= 15)//15 saniye veya daha fazla çöp kovasında ise silinecek.
+                System.Console.WriteLine(item.CompanyId);
+                if (item.DeleteTime != null && (now - item.DeleteTime.Value).TotalDays >= -7)//7 gün veya daha fazla çöp kovasında ise silinecek.
                 {
                     _context.Companies.Remove(item);
                     //_context.SaveChanges();
