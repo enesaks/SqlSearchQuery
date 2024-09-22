@@ -124,7 +124,7 @@ namespace SqlSearchQuery.Controllers
             foreach (var item in DeleteList)
             {
                 System.Console.WriteLine(item.CompanyId);
-                if (item.DeleteTime != null && (now - item.DeleteTime.Value).TotalDays >= -7)//7 gün veya daha fazla çöp kovasında ise silinecek.
+                if (item.DeleteTime != null && (now - item.DeleteTime.Value).TotalDays >= 7)//7 gün veya daha fazla çöp kovasında ise silinecek.
                 {
                     _context.Companies.Remove(item);
                     //_context.SaveChanges();
@@ -132,6 +132,11 @@ namespace SqlSearchQuery.Controllers
             }
 
             return Ok();
+        }
+
+        public IActionResult CreateOffer(int id)
+        {
+            return RedirectToAction("Index", "Offer", new { id = id });
         }
 
     }

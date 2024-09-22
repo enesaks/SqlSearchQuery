@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SqlSearchQuery.Models.Context;
 
@@ -11,9 +12,11 @@ using SqlSearchQuery.Models.Context;
 namespace SqlSearchQuery.Migrations
 {
     [DbContext(typeof(SqlSearchQueryContext))]
-    partial class SqlSearchQueryContextModelSnapshot : ModelSnapshot
+    [Migration("20240920172846_OfferTableMig3")]
+    partial class OfferTableMig3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,10 +74,6 @@ namespace SqlSearchQuery.Migrations
 
                     b.Property<int>("CompanyId")
                         .HasColumnType("int");
-
-                    b.Property<string>("CompanyName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()

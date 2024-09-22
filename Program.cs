@@ -14,6 +14,9 @@ builder.Services.AddDbContext<SqlSearchQueryContext>(options => options.UseSqlSe
 
 builder.Services.AddHostedService<TimedHostedService>();
 
+//EmailSender
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+
 var app = builder.Build();
 
 

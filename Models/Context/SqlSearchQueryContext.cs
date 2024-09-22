@@ -12,6 +12,6 @@ public class SqlSearchQueryContext : DbContext
     }
 
     public DbSet<Company> Companies { get; set; }
-
+    public DbSet<Offer> Offers { get; set; }
 
 }

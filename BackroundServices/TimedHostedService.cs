@@ -21,7 +21,7 @@ public class TimedHostedService : IHostedService
     {
         System.Console.WriteLine($"{nameof(TimedHostedService)} service started...");
 
-        timer = new Timer(DeleteService, null, TimeSpan.Zero, TimeSpan.FromSeconds(3)); // 3 saniyde bir çalışıcak
+        timer = new Timer(DeleteService, null, TimeSpan.Zero, TimeSpan.FromHours(1)); // 1 saate bir çalışıcak
 
     }
 
