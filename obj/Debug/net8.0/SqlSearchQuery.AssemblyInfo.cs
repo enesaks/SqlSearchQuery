@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SqlSearchQuery")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33f706ef162f6f30630f9cdf9b1deca29bf1f07e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66d088645b68ee3e1dd930d66f463b94b1b18fbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SqlSearchQuery")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SqlSearchQuery")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

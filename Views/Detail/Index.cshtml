@@ -1,0 +1,28 @@
+﻿@model SqlSearchQuery.Models.Entities.Company
+@{
+    ViewData["Title"] = "Detail Page";
+}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-6 offset-md-3">
+            <h1>@Model.CompanyName Şirket Detayları</h1>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Yetkili Kişi:</strong> @Model.AuthorizedPerson</li>
+                <li class="list-group-item"><strong>Şirket Türü:</strong> @Model.Segment</li>
+                <li class="list-group-item"><strong>Adresi:</strong> @Model.Address</li>
+                <li class="list-group-item"><strong>Mail Adresi:</strong> @Model.EmailAddress</li>
+                <li class="list-group-item"><strong>Telefon Numarası:</strong> @Model.PhoneNumber</li>
+                <li class="list-group-item"><strong>Vergi Numarası:</strong> @Model.TaxNo</li>
+            </ul>
+        </div>
+
+        <div class="col-md-6 offset-md-3">
+            <br>
+            <a class="btn btn-info btn-block" href="/Home/CreateOffer/@Model.CompanyId" style="width: 100%;">Teklif
+                Ver</a>
+        </div>
+
+    </div>
+</div>
